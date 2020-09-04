@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-
+import java.util.stream.Collectors; 
+import java.util.stream.Stream; 
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -42,6 +43,19 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        return 0;
+
+        final String LinuxOpName = "Linux";
+        int countOfLinuxUsers = 0;
+        Iterator userIterator = users.iterator();
+        
+        while (userIterator.hasNext()) {            
+            User user = (User)userIterator.next();
+            
+            if ( LinuxOpName.equals(user.getType())) {
+                countOfLinuxUsers++; 
+            }
+        }
+        
+        return countOfLinuxUsers;
     }
 }
