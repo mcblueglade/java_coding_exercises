@@ -5,8 +5,6 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.stream.Collectors; 
-import java.util.stream.Stream; 
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -14,7 +12,7 @@ public class Exercise001 {
     }
 
     public String generateInitials(String firstName, String lastName) {
-        return Character.toUpperCase(firstName.charAt(0)) + "." + Character.toUpperCase(lastName.charAt(0)); 
+        return Character.toUpperCase(firstName.charAt(0)) + "." + Character.toUpperCase(lastName.charAt(0));
     }
 
     public double addVat(double originalPrice, double vatRate) {
@@ -23,16 +21,16 @@ public class Exercise001 {
 
     public String reverse(String sentence) {
 
-        String reversed="";
+        String reversed = "";
         String[] words = sentence.split(" ");
-                
+
         List<String> reversedWords = new ArrayList<String>();
         reversedWords = Arrays.asList(words);
-        
+
         Collections.reverse(reversedWords);
-        
+
         Iterator strIterator = reversedWords.iterator();
-        while (strIterator.hasNext()){
+        while (strIterator.hasNext()) {
             reversed += new StringBuilder(strIterator.next().toString()).reverse().toString();
             if (strIterator.hasNext()) {
                 reversed += " ";
@@ -47,15 +45,15 @@ public class Exercise001 {
         final String LinuxOpName = "Linux";
         int countOfLinuxUsers = 0;
         Iterator userIterator = users.iterator();
-        
-        while (userIterator.hasNext()) {            
-            User user = (User)userIterator.next();
-            
-            if ( LinuxOpName.equals(user.getType())) {
-                countOfLinuxUsers++; 
+
+        while (userIterator.hasNext()) {
+            User user = (User) userIterator.next();
+
+            if (LinuxOpName.equals(user.getType())) {
+                countOfLinuxUsers++;
             }
         }
-        
+
         return countOfLinuxUsers;
     }
 }
